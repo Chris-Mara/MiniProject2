@@ -7,6 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Car::class, function (Faker $faker) {
     return [
-        'make' => $faker->randomElements($array = array('ford', 'honda', 'toyota'))
+        'make' => $faker->randomElement($array = array('ford', 'honda', 'toyota')),
+        'model' => $faker->randomElement($array = array ('truck', 'sedan', 'van')),
+        'year' => $faker->year($max = 'now'),
     ];
 });
