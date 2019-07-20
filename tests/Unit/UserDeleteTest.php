@@ -15,11 +15,11 @@ class UserDeleteTest extends TestCase
      */
     public function testUserDelete()
     {
-        $this->assertDatabaseHas('users', array('id' => 1));
+        $this->assertDatabaseHas('users', array('id' => 5));
 
-        $user = \App\User::find(1);
+        $user = \App\User::find(5);
         $user->delete();
 
-        $this->assertDatabaseMissing('users', array('id' => 1));
+        $this->assertDatabaseMissing('users', array('id' => 5));
     }
 }
