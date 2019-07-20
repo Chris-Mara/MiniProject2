@@ -17,11 +17,10 @@ class UserInsertTest extends TestCase
     {
         $user = factory(\App\User::class)->create([
             'name' => 'TEST',
-            'email' => 'TEST@TEST.TEST',
             'password' => 'TESTPASS',
         ]);
 
-        $this->assertDatabaseHas('users', array('name' => 'TEST', 'email' => 'TEST@TEST.TEST', 'password' => 'TESTPASS'));
+        $this->assertDatabaseHas('users', array('name' => 'TEST', 'password' => 'TESTPASS'));
 
     }
 }
