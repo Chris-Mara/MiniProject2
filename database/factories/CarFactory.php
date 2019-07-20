@@ -9,6 +9,6 @@ $factory->define(Car::class, function (Faker $faker) {
     return [
         'make' => $faker->randomElement($array = array('ford', 'honda', 'toyota')),
         'model' => $faker->randomElement($array = array ('truck', 'sedan', 'van')),
-        'year' => $faker->year($max = 'now'),
+        'year' => (integer)$faker->year($max = 'now'),
     ];
 });
